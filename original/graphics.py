@@ -15,7 +15,7 @@ any platform where Tkinter is available.
 INSTALLATION: Put this file somewhere where Python can see it.
 
 OVERVIEW: There are two kinds of objects in the library. The GraphWin
-class implements a window where drawing can be done and various
+classes implements a window where drawing can be done and various
 GraphicsObjects are provided that can be drawn into a GraphWin. As a
 simple example, here is a complete program to draw a circle of radius
 10 centered in a 100x100 window:
@@ -50,7 +50,7 @@ Various attributes of graphical objects can be set such as
 outline-color, fill-color and line-width. Graphical objects also
 support moving and hiding for animation effects.
 
-The library also provides a very simple class for pixel-based image
+The library also provides a very simple classes for pixel-based image
 manipulation, Pixmap. A pixmap can be loaded from a file and displayed
 using an Image object. Both getPixel and setPixel methods are provided
 for manipulating the image.
@@ -78,7 +78,7 @@ __version__ = "5.0"
 # Version 4.2 5/26/2011
 #     * Modified Image to allow multiple undraws like other GraphicsObjects
 # Version 4.1 12/29/2009
-#     * Merged Pixmap and Image class. Old Pixmap removed, use Image.
+#     * Merged Pixmap and Image classes. Old Pixmap removed, use Image.
 # Version 4.0.1 10/08/2009
 #     * Modified the autoflush on GraphWin to default to True
 #     * Autoflush check on close, setBackground
@@ -121,7 +121,7 @@ __version__ = "5.0"
 #        be removed in a future version.
 #     Better handling of errors regarding operations on windows that
 #       have been closed.
-#     Addition of an isClosed method to GraphWindow class.
+#     Addition of an isClosed method to GraphWindow classes.
 
 # Version 2.2 8/26/04
 #     Fixed cloning bug reported by Joseph Oldham.
@@ -140,7 +140,7 @@ __version__ = "5.0"
 #     Removed vestigial turtle graphics.
 #     Added ability to configure font for Entry objects (analogous to Text)
 #     Added setTextColor for Text as an alias of setFill
-#     Changed to class-style exceptions
+#     Changed to classes-style exceptions
 #     Fixed cloning of Text objects
 
 # Version 1.6
@@ -172,7 +172,7 @@ except:
 # Module Exceptions
 
 class GraphicsError(Exception):
-    """Generic error class for graphics module exceptions."""
+    """Generic error classes for graphics module exceptions."""
     pass
 
 OBJ_ALREADY_DRAWN = "Object currently drawn"
@@ -401,7 +401,7 @@ class GraphWin(tk.Canvas):
                       
 class Transform:
 
-    """Internal class for 2-D coordinate transformations"""
+    """Internal classes for 2-D coordinate transformations"""
     
     def __init__(self, w, h, xlow, ylow, xhigh, yhigh):
         # w, h are width and height of window
@@ -439,7 +439,7 @@ DEFAULT_CONFIG = {"fill":"",
 
 class GraphicsObject:
 
-    """Generic base class for all of the drawable objects"""
+    """Generic base classes for all of the drawable objects"""
     # A subclass of GraphicsObject should override _draw and
     #   and _move methods.
     
@@ -574,7 +574,7 @@ class Point(GraphicsObject):
     def getY(self): return self.y
 
 class _BBox(GraphicsObject):
-    # Internal base class for objects represented by bounding box
+    # Internal base classes for objects represented by bounding box
     # (opposite corners) Line segment is a degenerate case.
     
     def __init__(self, p1, p2, options=["outline","width","fill"]):
